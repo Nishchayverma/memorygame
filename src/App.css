@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.mainPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.lvlHeading{
+    width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+}
+.box{
+    width: 90px;
+    height: 90px;
+    border: 1px solid grey;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.btnsection{
+    margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.btn{
+    font-size: 20px;
+    display: flex;
+    padding: 10px 15px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-lvl{
+    font-size: 15px;
+    display: flex;
+    font-weight: 600;
+    padding: 0 10px;
+    margin-left: 10px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 500px) {
+    .box{
+        width: 70px;
+        height: 70px;
+        font-size: 20px;
+    }
+    .btn{
+        padding: 0px 10px;
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .box{
+        width: 65px;
+        height: 65px;
+        font-size: 18px;
+    }
+    .btn{
+        padding: 0px 5px;
+    }
+ 
 }
