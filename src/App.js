@@ -22,7 +22,7 @@ function App() {
           id: c++,
           value: '-',
           trueValue: '-',
-          userSelectedValue : ''
+          userSelectedValue: ''
         }
       }
     }
@@ -32,7 +32,7 @@ function App() {
   function handleBoxClick(id) {
     if (clickable) {
       setBoard((prevBoard) => prevBoard.map(boxes => boxes.map(box => box.id === id
-        ? { ...box, value: userNumber, userSelectedValue : userNumber } :
+        ? { ...box, value: userNumber, userSelectedValue: userNumber } :
         box)))
       setUserNumber(prev => prev + 1)
     }
@@ -90,7 +90,7 @@ function App() {
       arr.push(
         <div className="container" key={i}>
           <BoardContainer
-          win={win}
+            win={win}
             handleBoxClick={handleBoxClick}
             board={board}
             slicing={i}
@@ -102,20 +102,22 @@ function App() {
   }
 
   function handleChecks() {
-    let check = true
-    board.forEach(row => {
-      row.forEach(col => {
-        if (col.value !== col.trueValue) {
-          check = false
-        }
+    if (clickable) {
+      let check = true
+      board.forEach(row => {
+        row.forEach(col => {
+          if (col.value !== col.trueValue) {
+            check = false
+          }
+        })
       })
-    })
-    if (!check) {
-      setBoard(prevboard => prevboard.map(row => row.map(col => 
-        { return { ...col, value: col.trueValue } 
-      })))
+      if (!check) {
+        setBoard(prevboard => prevboard.map(row => row.map(col => {
+          return { ...col, value: col.trueValue }
+        })))
+      }
+      check ? setWin('true') : setWin('false')
     }
-    check ? setWin('true') : setWin('false')
   }
 
   function handleRestartLevel() {
